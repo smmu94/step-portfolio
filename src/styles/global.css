@@ -81,6 +81,12 @@ html {
     cursor: poJetBrains Mono;
     border: none;
 }
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
 
 .btn-primary {
     background-color: var(--color-bg-burgundy);
@@ -111,19 +117,6 @@ html {
     background-color: transparent;
     color: var(--color-text-primary);
     padding-inline: 0;
-}
-
-.btn-ghost::after {
-    content: "";
-    display: block;
-    height: 1px;
-    width: 0;
-    background-color: var(--color-neon-cyan);
-    transition: width 200ms;
-}
-
-.btn-ghost:hover::after {
-    width: 100%;
 }
 
 .btn:focus-visible {

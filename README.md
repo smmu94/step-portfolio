@@ -1,43 +1,64 @@
-# Astro Starter Kit: Minimal
+# Stephanie Morales Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+![screenshot desktop](https://res.cloudinary.com/dhcvj3jms/image/upload/v1769188166/portfolio_screenshot_tdxzqc.png)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Welcome to my personal portfolio! This site showcases my work as a **React Frontend Developer** and UI Engineer, with a focus on building **interactive, performant, and accessible web experiences**.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🌐 Live Demo
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Check out the live version here: [Stephanie Morales Portfolio](https://stephaniemorales.netlify.app/)
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 💻 About
 
-Any static assets, like images, can be placed in the `public/` directory.
+I am a frontend developer passionate about creating **modern, responsive interfaces**. I enjoy working with React, TypeScript, and Tailwind CSS, and continuously exploring new technologies and design patterns.
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## 🛠 Technologies
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+These are the main tools and technologies I work with:
 
-## 👀 Want to learn more?
+- **Frontend:** React, Next.js, TypeScript, Redux, Tailwind CSS
+- **Testing:** Jest, React Testing Library
+- **Other:** Git, Python, SQL
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 📂 Projects
+
+A selection of my recent work:
+
+- **Elon Physio:** Responsive website for a physiotherapy clinic.  
+- **Mobile Store E-commerce:** Web app to browse and purchase mobile phones.  
+- **Aurum Restaurant:** Restaurant website with menu, reservations, and contact features.  
+- **Burger Queen API Client:** Web app for managing burger restaurant orders.  
+- **MD Links:** Node.js library and CLI for validating Markdown links.
+
+> More details and live demos available on the **Projects** section of the site.
+
+---
+
+## 🏆 Experience
+
+- **Frontend Developer @ Simetrik (Remote, Bogotá, Colombia)**  
+  *Aug 2022 – Aug 2024*  
+  Developed React-based accounting modules, improved testing practices, and contributed to a shared component library.
+
+---
+
+## 📬 Contact
+
+Feel free to reach out!  
+
+- **Email:** [stephaniemmu@gmail.com](mailto:stephaniemmu@gmail.com)  
+- **GitHub:** [github.com/smmu94](https://github.com/smmu94)  
+- **LinkedIn:** [linkedin.com/in/smmu94](https://www.linkedin.com/in/smmu94)
+
+Or use the **Contact form** directly on the portfolio.
+
+---
+

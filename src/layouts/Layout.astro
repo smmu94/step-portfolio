@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import Navbar from "../components/layout/Navbar.astro";
 import Footer from "../components/layout/Footer.astro";
-import ToggleMusic from "../components/ui/ToggleMusic.astro";
 ---
 
 <!doctype html>
@@ -29,7 +28,6 @@ import ToggleMusic from "../components/ui/ToggleMusic.astro";
     <main class="relative z-10 flex flex-col items-center gap-32 px-6 md:px-10 py-20">
       <slot />
     </main>
-    <ToggleMusic />
     <slot name="modals" />
     <Footer />
   </body>

@@ -12,7 +12,7 @@ import { projects } from "../../utils/constants";
       A selection of my recent work focused on performance, clean architecture, and refined user experiences.
     </p>
   </div>
-  <div class="relative max-w-6xl mx-auto border-2 border-neon-cyan rounded-lg overflow-hidden">
+  <div class="relative max-w-6xl mx-auto overflow-hidden">
     <div id="projects-carousel" class="overflow-hidden rounded-xl">
       <div
         id="projects-track"
@@ -31,13 +31,13 @@ import { projects } from "../../utils/constants";
         ))}
       </div>
     </div>
-    <div class="absolute top-1/2 -translate-y-1/2 left-4 md:left-0 flex items-center gap-4 z-20">
-      <Button id="prevProject" style="ghost">
+    <div class="absolute top-1/2 -translate-y-1/2 left-4 md:left-0 flex items-center gap-4">
+      <Button id="prevProject" style="primary" class="rounded-full! px-3!">
         <ChevronLeft />
       </Button>
     </div>
     <div class="absolute top-1/2 -translate-y-1/2 right-4 md:right-0 flex items-center gap-4 z-20">
-      <Button id="nextProject" style="ghost">
+      <Button id="nextProject" style="primary" class="rounded-full! px-3!">
         <ChevronRight />
       </Button>
     </div>
@@ -50,6 +50,11 @@ import { projects } from "../../utils/constants";
   const prev = document.getElementById("prevProject");
   const next = document.getElementById("nextProject");
 
+  const handleButtonState = () => {
+    prev.disabled = index === 0;
+    next.disabled = index === slides.length - 1;
+  };
+
   let index = 0;
 
   const updateSlide = () => {
@@ -60,11 +65,13 @@ import { projects } from "../../utils/constants";
   next.addEventListener("click", () => {
     index = Math.min(index + 1, slides.length - 1);
     updateSlide();
+    handleButtonState();
   });
 
   prev.addEventListener("click", () => {
     index = Math.max(index - 1, 0);
     updateSlide();
+    handleButtonState();
   });
 
   window.addEventListener("resize", updateSlide);
