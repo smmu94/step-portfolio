@@ -1,0 +1,62 @@
+---
+import { interestsImages } from "../../utils/constants";
+import Button from "../ui/Button.astro";
+---
+
+<div
+  id="galleryModal"
+  class="fixed inset-0 z-100 bg-bg-dark/95 backdrop-blur-sm
+         opacity-0 pointer-events-none transition-opacity duration-300"
+>
+  <div
+    class="w-full h-full overflow-y-auto px-4 md:px-10 py-10
+           grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[160px]"
+  >
+    {interestsImages.map((img) => (
+      <div
+        class={`rounded-lg overflow-hidden
+          ${
+            img.isVertical
+              ? "row-span-2" 
+              : img.size === "small"
+              ? "row-span-1 col-span-1"
+              : img.size === "medium"
+              ? "row-span-2 col-span-1"
+              : "row-span-2 col-span-2"
+          }`}
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+  <div class="fixed bottom-6 left-1/2 -translate-x-1/2">
+    <Button id="closeGalleryBtn">Close</Button>
+  </div>
+</div>
+
+<script is:inline type="module">
+  const modal = document.getElementById("galleryModal");
+  const openBtn = document.getElementById("openGalleryBtn");
+  const closeBtn = document.getElementById("closeGalleryBtn");
+
+  openBtn?.addEventListener("click", () => {
+    modal.classList.remove("opacity-0", "pointer-events-none");
+    modal.classList.add("opacity-100", "pointer-events-auto");
+    document.body.style.overflow = "hidden";
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    modal.classList.remove("opacity-100", "pointer-events-auto");
+    modal.classList.add("opacity-0", "pointer-events-none");
+    document.body.style.overflow = "";
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeBtn?.click();
+  });
+</script>

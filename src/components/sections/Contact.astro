@@ -1,0 +1,116 @@
+---
+import { Mail, Github, Linkedin } from "@lucide/astro/icons";
+
+const SERVICE_ID = import.meta.env.PUBLIC_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.PUBLIC_TEMPLATE_ID;
+const USER_ID = import.meta.env.PUBLIC_USER_ID;
+---
+
+<section id="contact" class="w-full py-24 bg-bg-dark/90 relative">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 text-center mb-12">
+    <h2 class="text-subtitle text-neon-cyan mb-4">Contact Me</h2>
+    <p class="text-body text-primary max-w-2xl mx-auto">
+      I'd love to hear from you! Send me a message or reach out via email
+      or my social profiles.
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 md:px-10 grid md:grid-cols-2 gap-10">
+    <form
+      id="contactForm"
+      class="flex flex-col gap-4 bg-bg-burgundy/20 backdrop-blur-sm p-6 md:p-10 rounded-xl shadow-lg"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        class="p-3 rounded bg-bg-dark/50 text-primary placeholder:text-text-muted border border-neon-cyan/20 focus:border-neon-cyan focus:outline-none"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        class="p-3 rounded bg-bg-dark/50 text-primary placeholder:text-text-muted border border-neon-cyan/20 focus:border-neon-cyan focus:outline-none"
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        rows="6"
+        required
+        class="p-3 rounded bg-bg-dark/50 text-primary placeholder:text-text-muted border border-neon-cyan/20 focus:border-neon-cyan focus:outline-none resize-none"
+      ></textarea>
+      <button
+        type="submit"
+        class="px-6 py-3 bg-neon-cyan text-bg-dark font-bold rounded hover:bg-neon-cyan/80 transition"
+      >
+        Send Message
+      </button>
+      <p id="formStatus" class="text-sm text-primary mt-2"></p>
+    </form>
+    <div class="flex flex-col justify-center gap-8">
+      <div class="flex justify-center md:justify-start gap-6">
+        <a 
+          href="mailto:stephaniemmu@gmail.com" 
+          class="group flex flex-col items-center gap-2 p-4 rounded-lg bg-bg-dark/30 hover:bg-bg-dark/50 transition-all duration-300"
+          aria-label="Email me"
+        >
+          <Mail class="w-10 h-10 text-neon-cyan group-hover:scale-110 transition-transform" />
+          <span class="text-xs text-text-muted group-hover:text-neon-cyan transition">Email</span>
+        </a>
+
+        <a 
+          href="https://github.com/smmu94" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col items-center gap-2 p-4 rounded-lg bg-bg-dark/30 hover:bg-bg-dark/50 transition-all duration-300"
+          aria-label="Visit my GitHub"
+        >
+          <Github class="w-10 h-10 text-neon-cyan group-hover:scale-110 transition-transform" />
+          <span class="text-xs text-text-muted group-hover:text-neon-cyan transition">GitHub</span>
+        </a>
+
+        <a 
+          href="https://www.linkedin.com/in/smmu94" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex flex-col items-center gap-2 p-4 rounded-lg bg-bg-dark/30 hover:bg-bg-dark/50 transition-all duration-300"
+          aria-label="Connect on LinkedIn"
+        >
+          <Linkedin class="w-10 h-10 text-neon-cyan group-hover:scale-110 transition-transform" />
+          <span class="text-xs text-text-muted group-hover:text-neon-cyan transition">LinkedIn</span>
+        </a>
+      </div>
+
+      <p class="text-body text-text-muted text-center md:text-left">
+        Feel free to reach out for collaborations, projects, or just a friendly hello!
+      </p>
+    </div>
+  </div>
+</section>
+
+<script type="module" define:vars={{ SERVICE_ID, TEMPLATE_ID, USER_ID }}>
+  import emailjs from 'https://cdn.skypack.dev/emailjs-com';
+
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    try {
+      await emailjs.sendForm(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        form,
+        USER_ID
+      );
+      status.textContent = 'Message sent successfully!';
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      status.textContent = 'Failed to send message. Try again.';
+    }
+  });
+</script>

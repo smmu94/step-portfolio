@@ -1,0 +1,51 @@
+---
+import { description } from "../../utils/constants";
+import Button from "../ui/Button.astro";
+import { ChevronDown } from "@lucide/astro/icons";
+---
+
+<section
+  id="about"
+  class="scroll-m-10 flex flex-col gap-4 max-w-4xl px-6 md:px-10 py-10 md:py-12
+         border-2 border-neon-cyan rounded-lg"
+>
+  <div class="text-neon-cyan text-small animate-pulse">
+    &gt; initiating_sequence...
+  </div>
+
+  <div class="flex flex-col md:flex-row items-center md:items-start gap-4">
+    <div class="flex flex-col gap-4 flex-1">
+      <h2 class="text-neon-cyan text-subtitle">&gt; Who_Am_I</h2>
+      {description.map(line => (
+        <p class="text-body text-text-muted leading-relaxed animate-fade-in">
+          {line}
+        </p>
+      ))}
+    </div>
+
+    <div class="relative group w-64 h-64 md:w-80 md:h-80">
+      <div class="absolute -inset-1 rounded-lg bg-bg-burgundy blur opacity-25
+                  group-hover:opacity-50 transition duration-300" />
+      <img
+        src="https://res.cloudinary.com/dhcvj3jms/image/upload/v1769163976/stephanie_pwdz0z.png"
+        alt="Stephanie Morales"
+        class="w-full h-full object-cover rounded-lg
+               transform group-hover:scale-105 transition duration-300"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-4 mt-4">
+    <h2 class="text-neon-cyan text-subtitle">&gt; Personal_Interests</h2>
+    <p class="text-body text-text-muted leading-relaxed">
+      I love music, science fiction, time travel, and all things retro culture.
+      I am also a proud dog mom who enjoys spending quality time with my pups.
+    </p>
+
+    <div class="flex justify-center">
+      <Button id="openGalleryBtn">
+        View Gallery <ChevronDown />
+      </Button>
+    </div>
+  </div>
+</section>

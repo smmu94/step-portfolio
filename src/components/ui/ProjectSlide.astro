@@ -1,0 +1,49 @@
+---
+interface Props {
+  desktop: string;
+  mobile: string;
+  title: string;
+  description: string;
+  tags: string[];
+  demoUrl?: string;
+  codeUrl?: string;
+}
+
+const { desktop, mobile, title, description, tags, demoUrl, codeUrl } = Astro.props;
+---
+
+<article class="min-w-full relative flex items-center overflow-hidden rounded-xl h-[70vh] md:h-[60vh]">
+  <picture>
+    <source srcset={mobile} media="(max-width: 768px)" />
+    <img
+      src={desktop}
+      alt={title}
+      class="absolute inset-0 w-full h-full object-contain opacity-10"
+    />
+  </picture>
+  <div class="relative z-10 max-w-6xl w-full mx-auto px-12 py-8 md:py-12 text-white flex flex-col justify-center h-full">
+    <h3 class="text-subtitle mb-3 md:mb-4 text-neon-cyan">{title}</h3>
+    <p class="text-small md:text-body mb-4 md:mb-6 max-w-xl">{description}</p>
+
+    <div class="flex flex-wrap gap-2 mb-4 md:mb-6">
+      {tags.map(tag => (
+        <span class="px-3 py-1 rounded bg-neon-cyan/20 text-neon-cyan text-xs md:text-sm">
+          {tag}
+        </span>
+      ))}
+    </div>
+
+    <div class="flex gap-2 md:gap-4">
+      {demoUrl && (
+        <a href={demoUrl} target="_blank" class="btn btn-primary text-small md:text-body w-fit">
+          Demo
+        </a>
+      )}
+      {codeUrl && (
+        <a href={codeUrl} target="_blank" class="btn btn-primary text-small md:text-body w-fit">
+          Code
+        </a>
+      )}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,38 @@
+---
+import { Mail, Github, Linkedin } from "@lucide/astro/icons";
+import { SquareTerminal } from "@lucide/astro/icons";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="w-full bg-bg-dark/90 border-t border-neon-cyan/20 backdrop-blur-sm py-8">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 flex flex-col gap-2">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <a href="#home" class="flex items-center gap-2">
+        <SquareTerminal class="bg-bg-burgundy p-1 rounded-sm" size={28} />
+        <span class="text-white font-bold text-lg tracking-wider">Stephanie_M_</span>
+      </a>
+      <ul class="flex gap-6 text-white text-sm flex-wrap justify-center">
+        <li><a href="#home" class="hover:text-neon-cyan transition">Home</a></li>
+        <li><a href="#about" class="hover:text-neon-cyan transition">About</a></li>
+        <li><a href="#experience" class="hover:text-neon-cyan transition">Experience</a></li>
+        <li><a href="#projects" class="hover:text-neon-cyan transition">Projects</a></li>
+        <li><a href="#contact" class="hover:text-neon-cyan transition">Contact</a></li>
+      </ul>
+      <div class="flex gap-4">
+        <a href="mailto:stephaniemmu@gmail.com" class="hover:text-neon-cyan transition">
+          <Mail class="w-6 h-6 text-white" />
+        </a>
+        <a href="https://github.com/smmu94" target="_blank" class="hover:text-neon-cyan transition">
+          <Github class="w-6 h-6 text-white" />
+        </a>
+        <a href="https://www.linkedin.com/in/smmu94" target="_blank" class="hover:text-neon-cyan transition">
+          <Linkedin class="w-6 h-6 text-white" />
+        </a>
+      </div>
+    </div>
+    <p class="text-white text-center text-sm mt-4">
+      &copy; {currentYear} Stephanie Morales. All rights reserved.
+    </p>
+  </div>
+</footer>

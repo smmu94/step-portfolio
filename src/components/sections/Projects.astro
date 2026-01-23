@@ -1,0 +1,71 @@
+---
+import ProjectSlide from "../ui/ProjectSlide.astro";
+import Button from "../ui/Button.astro";
+import { ChevronLeft, ChevronRight } from "@lucide/astro";
+import { projects } from "../../utils/constants";
+---
+
+<section id="projects" class="w-full py-20 relative">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 mb-8 text-center">
+    <h2 class="text-subtitle mb-4 text-neon-cyan">Featured Projects</h2>
+    <p class="text-body text-primary max-w-2xl mx-auto">
+      A selection of my recent work focused on performance, clean architecture, and refined user experiences.
+    </p>
+  </div>
+  <div class="relative max-w-6xl mx-auto border-2 border-neon-cyan rounded-lg overflow-hidden">
+    <div id="projects-carousel" class="overflow-hidden rounded-xl">
+      <div
+        id="projects-track"
+        class="flex transition-transform duration-700 ease-in-out gap-6"
+      >
+        {projects.map((project) => (
+          <ProjectSlide
+            desktop={project.desktop}
+            mobile={project.mobile}
+            title={project.title}
+            description={project.description}
+            tags={project.tags}
+            demoUrl={project.demoUrl}
+            codeUrl={project.codeUrl}
+          />
+        ))}
+      </div>
+    </div>
+    <div class="absolute top-1/2 -translate-y-1/2 left-4 md:left-0 flex items-center gap-4 z-20">
+      <Button id="prevProject" style="ghost">
+        <ChevronLeft />
+      </Button>
+    </div>
+    <div class="absolute top-1/2 -translate-y-1/2 right-4 md:right-0 flex items-center gap-4 z-20">
+      <Button id="nextProject" style="ghost">
+        <ChevronRight />
+      </Button>
+    </div>
+  </div>
+</section>
+
+<script is:inline type="module">
+  const track = document.getElementById("projects-track");
+  const slides = track.children;
+  const prev = document.getElementById("prevProject");
+  const next = document.getElementById("nextProject");
+
+  let index = 0;
+
+  const updateSlide = () => {
+    const width = slides[0].offsetWidth + 24; // gap incluido
+    track.style.transform = `translateX(-${index * width}px)`;
+  };
+
+  next.addEventListener("click", () => {
+    index = Math.min(index + 1, slides.length - 1);
+    updateSlide();
+  });
+
+  prev.addEventListener("click", () => {
+    index = Math.max(index - 1, 0);
+    updateSlide();
+  });
+
+  window.addEventListener("resize", updateSlide);
+</script>

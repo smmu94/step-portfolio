@@ -1,0 +1,33 @@
+---
+interface Props {
+  id?: string;
+  style?: "primary" | "secondary" | "ghost";
+  link?: {
+    href: string;
+    target?: string;
+  };
+  target?: string;
+  onClick?: string;
+  type?: "button" | "submit";
+}
+
+const { id, style = "primary", link, onClick, type = "button" } = Astro.props;
+
+const styleMap: Record<string, string> = {
+  primary: "text-small-bold btn btn-primary",
+  secondary: "text-small-bold btn btn-secondary",
+  ghost: "text-small-bold btn btn-ghost",
+};
+
+const styleClass = styleMap[style] ?? styleMap.primary;
+---
+
+{link ? (
+  <a href={link.href} target={link.target} class={styleClass}>
+    <slot />
+  </a>
+) : (
+  <button id={id} class={styleClass} type={type} onclick={onClick}>
+    <slot />
+  </button>
+)}

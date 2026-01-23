@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+html {
+    scroll-padding-top: 90px;
+}
+
+@theme {
+    --color-bg-dark: #0B0B0F;
+    --color-bg-burgundy: #5A162D; 
+    --color-neon-cyan: #00F6FF;
+    --color-text-primary: #FFFFFF;
+    --color-text-muted: #B8B8C2;
+    --color-text-inverted: #0B0B0F;
+}
+
+/* ========== TIPOGRAFÍA ========== */
+
+.text-logo {
+    font-family: "Space Mono", monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.text-title {
+    font-family: "Space Mono", monospace;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.text-subtitle {
+    font-family: "Space Mono", monospace;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+}
+
+.text-body {
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.text-body-bold {
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.text-small {
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.text-small-bold {
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* ========== BOTONES ========== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    letter-spacing: 0.05em;
+    transition: background-color 200ms, color 200ms, box-shadow 200ms, border-color 200ms, transform 150ms;
+    cursor: poJetBrains Mono;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--color-bg-burgundy);
+    color: var(--color-text-primary);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 16px color-mix(in srgb, var(--color-neon-cyan) 40%, transparent);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-neon-cyan);
+    border: 1px solid var(--color-neon-cyan);
+}
+
+.btn-secondary:hover {
+    background-color: color-mix(in srgb, var(--color-neon-cyan) 10%, transparent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--color-neon-cyan) 50%, transparent);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    padding-inline: 0;
+}
+
+.btn-ghost::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0;
+    background-color: var(--color-neon-cyan);
+    transition: width 200ms;
+}
+
+.btn-ghost:hover::after {
+    width: 100%;
+}
+
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-neon-cyan);
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-600 { animation-delay: 0.6s; }
