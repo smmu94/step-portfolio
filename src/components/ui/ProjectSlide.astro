@@ -12,38 +12,45 @@ interface Props {
 const { desktop, mobile, title, description, tags, demoUrl, codeUrl } = Astro.props;
 ---
 
-<article class="min-w-full relative flex items-center overflow-hidden rounded-xl h-[70vh] md:h-[60vh]">
+<article class="min-w-full relative overflow-hidden rounded-xl">
   <picture>
     <source srcset={mobile} media="(max-width: 768px)" />
     <img
       src={desktop}
       alt={title}
-      class="absolute inset-0 w-full h-full object-contain opacity-5"
+      class="absolute inset-0 w-full h-full object-contain opacity-40 md:block hidden"
+    />
+    <img
+      src={mobile}
+      alt={title}
+      class="w-full h-auto object-cover md:hidden"
     />
   </picture>
-  <div class="relative z-10 max-w-6xl w-2/3 mx-auto px-12 py-8 md:py-12 text-white flex flex-col justify-center h-full">
-    <h3 class="text-subtitle mb-3 md:mb-4 text-neon-cyan">{title}</h3>
-    <p class="text-small md:text-body mb-4 md:mb-6 max-w-xl">{description}</p>
+  <div class="relative z-10 w-full mx-auto px-4 md:px-16 py-8 md:py-12 text-white flex flex-col justify-center md:h-[60vh]">
+    <div class="max-w-2xl md:max-w-xl mx-auto w-full">
+      <h3 class="text-subtitle mb-3 md:mb-4 text-neon-cyan">{title}</h3>
+      <p class="text-small md:text-body mb-4 md:mb-6">{description}</p>
 
-    <div class="flex flex-wrap gap-2 mb-4 md:mb-6">
-      {tags.map(tag => (
-        <span class="px-3 py-1 rounded bg-neon-cyan/20 text-neon-cyan text-xs md:text-sm">
-          {tag}
-        </span>
-      ))}
-    </div>
+      <div class="flex flex-wrap gap-2 mb-4 md:mb-6">
+        {tags.map(tag => (
+          <span class="px-3 py-1 rounded bg-neon-cyan/20 text-neon-cyan text-xs md:text-sm">
+            {tag}
+          </span>
+        ))}
+      </div>
 
-    <div class="flex gap-2 md:gap-4">
-      {demoUrl && (
-        <a href={demoUrl} target="_blank" class="btn btn-primary text-xs w-fit">
-          Demo
-        </a>
-      )}
-      {codeUrl && (
-        <a href={codeUrl} target="_blank" class="btn btn-primary text-xs w-fit">
-          Code
-        </a>
-      )}
+      <div class="flex gap-2 md:gap-4">
+        {demoUrl && (
+          <a href={demoUrl} target="_blank" class="btn btn-primary text-xs w-fit">
+            Demo
+          </a>
+        )}
+        {codeUrl && (
+          <a href={codeUrl} target="_blank" class="btn btn-primary text-xs w-fit">
+            Code
+          </a>
+        )}
+      </div>
     </div>
   </div>
 </article>

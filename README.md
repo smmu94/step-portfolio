@@ -1,6 +1,6 @@
 # Stephanie Morales Portfolio
 
-![screenshot desktop](https://res.cloudinary.com/dhcvj3jms/image/upload/v1769188166/portfolio_screenshot_tdxzqc.png)
+![screenshot desktop](https://res.cloudinary.com/stellium/image/upload/v1769188166/portfolio_screenshot_tdxzqc.png)
 
 Welcome to my personal portfolio! This site showcases my work as a **React Frontend Developer** and UI Engineer, with a focus on building **interactive, performant, and accessible web experiences**.
 
@@ -32,10 +32,10 @@ These are the main tools and technologies I work with:
 
 A selection of my recent work:
 
-- **Elon Physio:** Responsive website for a physiotherapy clinic.  
-- **Mobile Store E-commerce:** Web app to browse and purchase mobile phones.  
-- **Aurum Restaurant:** Restaurant website with menu, reservations, and contact features.  
-- **Burger Queen API Client:** Web app for managing burger restaurant orders.  
+- **Elon Physio:** Responsive website for a physiotherapy clinic.
+- **Mobile Store E-commerce:** Web app to browse and purchase mobile phones.
+- **Aurum Restaurant:** Restaurant website with menu, reservations, and contact features.
+- **Burger Queen API Client:** Web app for managing burger restaurant orders.
 - **MD Links:** Node.js library and CLI for validating Markdown links.
 
 > More details and live demos available on the **Projects** section of the site.
@@ -45,20 +45,19 @@ A selection of my recent work:
 ## 🏆 Experience
 
 - **Frontend Developer @ Simetrik (Remote, Bogotá, Colombia)**  
-  *Aug 2022 – Aug 2024*  
+  _Aug 2022 – Aug 2024_  
   Developed React-based accounting modules, improved testing practices, and contributed to a shared component library.
 
 ---
 
 ## 📬 Contact
 
-Feel free to reach out!  
+Feel free to reach out!
 
-- **Email:** [stephaniemmu@gmail.com](mailto:stephaniemmu@gmail.com)  
-- **GitHub:** [github.com/smmu94](https://github.com/smmu94)  
+- **Email:** [stephaniemmu@gmail.com](mailto:stephaniemmu@gmail.com)
+- **GitHub:** [github.com/smmu94](https://github.com/smmu94)
 - **LinkedIn:** [linkedin.com/in/smmu94](https://www.linkedin.com/in/smmu94)
 
 Or use the **Contact form** directly on the portfolio.
 
 ---
-
